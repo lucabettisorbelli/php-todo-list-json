@@ -5,16 +5,16 @@ createApp ({
         return {
             // Array per memorizzare i dati ricevuti da api.php
             data: [],
-            newTodo: '',
-            newTask: ''
+            newTask: '',
+            todoList: []
         }
     },
     methods: {
         // Metodo per aggiungere un nuovo elemento alla lista
         addTodo() {
-            if (this.newTodo) {
-                this.data.push(this.newTodo);
-                this.newTodo = '';
+            if (this.newTask) {
+                this.data.push(this.newTask);
+                this.newTask = '';
             }
         },
         // Metodo per rimuovere un elemento dalla lista

@@ -14,7 +14,7 @@
 
             <!-- Form per aggiungere un nuovo elemento alla lista -->
             <form @submit.prevent="addTodo">
-                <input type="text" @keyup.enter="addNewTask" v-model="newTodo" placeholder="Aggiungi un nuovo elemento alla lista">
+                <input type="text" @keyup.enter="addNewTask" v-model="newTask" placeholder="Aggiungi un nuovo elemento alla lista">
                 <button class="btn btn-primary ms-2" @click="addNewTask" type="submit">Aggiungi</button>
             </form>
 
