@@ -1,13 +1,14 @@
 <?php
 
-// Array di stringhe con i dati da restituire
-$data = ['Fare la spesa', 'Pagare le bollette'];
+header('Content-Type: application/stringa');
 
 // Converti l'array di stringhe in una stringa JSON
 $stringa = json_encode($data);
 
-header('Content-Type: application/stringa');
+$todoList = file_get_contents("dati.json");
 
-echo $stringa;
+$todoListDati = json_decode($todoList, true);
+
+echo $todoList;
 
 ?>
