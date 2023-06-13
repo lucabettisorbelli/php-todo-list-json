@@ -13,14 +13,14 @@
             <h1>La mia lista di ToDo</h1>
 
             <!-- Form per aggiungere un nuovo elemento alla lista -->
-            <form @submit.prevent="addTodo">
-                <input type="text" @keyup.enter="addNewTask" v-model="newTask" placeholder="Aggiungi un nuovo elemento alla lista">
-                <button class="btn btn-primary ms-2" @click="addNewTask" type="submit">Aggiungi</button>
+            <form @submit.prevent="addNewTask">
+                <input type="text" v-model="newTask" placeholder="Aggiungi un nuovo elemento alla lista">
+                <button class="btn btn-primary ms-2" type="submit">Aggiungi</button>
             </form>
 
             <!-- Elementi della lista -->
             <ul class="list-group">
-                <li class="list-group-item" v-for="(todo, index) in data" :key="index">
+                <li class="list-group-item" v-for="(todo, index) in todoList" :key="index">
                     {{ todo }}
                     <!-- Pulsante per rimuovere l'elemento dalla lista -->
                     <button class="btn btn-light ms-2" @click="removeTodo(index)">Rimuovi</button>

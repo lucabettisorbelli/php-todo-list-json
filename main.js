@@ -4,22 +4,15 @@ createApp ({
     data() {
         return {
             // Array per memorizzare i dati ricevuti da api.php
-            data: [],
             newTask: '',
             todoList: []
         }
     },
     methods: {
-        // Metodo per aggiungere un nuovo elemento alla lista
-        addTodo() {
-            if (this.newTask) {
-                this.data.push(this.newTask);
-                this.newTask = '';
-            }
-        },
         // Metodo per rimuovere un elemento dalla lista
         removeTodo(index) {
-            this.data.splice(index, 1);
+            const data = { removeIndex: index };
+            this.sendData(data);
         },
         // Metodo per inviare un nuovo task al server
         addNewTask() {
@@ -42,7 +35,7 @@ createApp ({
         // Effettua una chiamata Axios a api.php
         axios.get('api.php').then(response => {
         console.log(response);
-        this.data = response.data;
+        this.todoList = response.data;
         })
     }
 }).mount('#app');
